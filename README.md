@@ -79,12 +79,12 @@ src/
 ### State Management
 
 - **TanStack Query** - Server state management
+- **Controlled Inputs** - Simple form handling with useState and useDebounce
 
 ### API & Types
 
 - **GitHub REST API** - Repository data source
 - **openapi-typescript** - Auto-generated TypeScript types
-- **Zod** - Schema validation
 
 ### Development Tools
 
