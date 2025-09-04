@@ -1,4 +1,5 @@
 import Link from "next/link"
+
 import { Star } from "lucide-react"
 
 import { formatStars } from "@/shared/lib"

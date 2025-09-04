@@ -1,6 +1,7 @@
 import { useInfiniteQuery } from "@tanstack/react-query"
 
 import { githubClient } from "@/shared/api/github/client/github-client"
+
 import type { SearchRepositoriesResponse } from "../model"
 
 type UseSearchRepositoriesParams = {
@@ -21,6 +22,7 @@ export function useSearchRepositories({
     enabled: enabled && query.length >= 3,
     staleTime: 5 * 60 * 1000,
     gcTime: 10 * 60 * 1000,
+    placeholderData: (previousData) => previousData,
     getNextPageParam: (lastPage, allPages) => {
       const totalPages = Math.ceil(lastPage.total_count / perPage)
       const currentPage = allPages.length

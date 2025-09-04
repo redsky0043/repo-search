@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react"
 
-interface UseIntersectionObserverProps {
+type UseIntersectionObserverProps = {
   threshold?: number
   root?: Element | null
   rootMargin?: string

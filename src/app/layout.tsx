@@ -33,7 +33,7 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-background min-h-screen grid grid-rows-[auto_1fr_auto]`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-background min-h-screen grid grid-rows-[1fr_auto]`}
         suppressHydrationWarning
       >
         <QueryProvider>
@@ -44,7 +44,7 @@ export default function RootLayout({
             disableTransitionOnChange
           >
             <Header />
-            <main className="container mx-auto px-4 py-8">{children}</main>
+            <main className="container mx-auto px-4 py-8 pt-34">{children}</main>
             <Footer />
           </ThemeProvider>
         </QueryProvider>

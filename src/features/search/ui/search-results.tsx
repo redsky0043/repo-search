@@ -1,11 +1,13 @@
 import { useMemo } from "react"
 
-import { useSearchRepositories } from "@/entities/repository/api"
 import { useIntersectionObserver } from "@/shared/hooks"
+import { SEARCH_CONSTANTS, UI_CONSTANTS } from "@/shared/lib"
+import { ScrollToTop } from "@/shared/ui/scroll-to-top"
 
-import { RepositoryList, RepositoryCardSkeleton } from "@/entities/repository/ui"
+import { useSearchRepositories } from "@/entities/repository/api"
+import { RepositoryCardSkeleton, RepositoryList } from "@/entities/repository/ui"
 
-interface SearchResultsProps {
+type SearchResultsProps = {
   query: string
 }
 
@@ -13,11 +15,11 @@ export function SearchResults({ query }: SearchResultsProps) {
   const { data, isLoading, isError, fetchNextPage, hasNextPage, isFetchingNextPage } =
     useSearchRepositories({
       query,
-      perPage: 10,
+      perPage: SEARCH_CONSTANTS.PER_PAGE,
     })
 
   const [loadMoreRef, entry] = useIntersectionObserver({
-    threshold: 0.1,
+    threshold: SEARCH_CONSTANTS.INTERSECTION_THRESHOLD,
   })
 
   if (entry?.isIntersecting && hasNextPage && !isFetchingNextPage) {
@@ -39,7 +41,7 @@ export function SearchResults({ query }: SearchResultsProps) {
   if (isLoading) {
     return (
       <div className="space-y-4">
-        {Array.from({ length: 5 }).map((_, index) => (
+        {Array.from({ length: UI_CONSTANTS.SKELETON_COUNT.INITIAL_LOADING }).map((_, index) => (
           <RepositoryCardSkeleton key={index} />
         ))}
       </div>
@@ -60,18 +62,25 @@ export function SearchResults({ query }: SearchResultsProps) {
       <RepositoryList repositories={repositories} />
 
       {hasNextPage && (
-        <div ref={loadMoreRef} className="flex justify-center py-8">
+        <div
+          ref={loadMoreRef}
+          className="flex justify-center py-8"
+        >
           {isFetchingNextPage ? (
             <div className="space-y-4 w-full">
-              {Array.from({ length: 3 }).map((_, index) => (
-                <RepositoryCardSkeleton key={index} />
-              ))}
+              {Array.from({ length: UI_CONSTANTS.SKELETON_COUNT.INFINITE_LOADING }).map(
+                (_, index) => (
+                  <RepositoryCardSkeleton key={index} />
+                )
+              )}
             </div>
           ) : (
             <div className="text-gray-500 text-sm">Scroll down to load more...</div>
           )}
         </div>
       )}
+
+      <ScrollToTop />
     </div>
   )
 }

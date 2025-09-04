@@ -3,11 +3,12 @@
 import Link from "next/link"
 import { Star } from "lucide-react"
 
-import { useRepositoryDetails } from "@/entities/repository/api"
 import { formatDate, formatStars } from "@/shared/lib"
 import { Badge } from "@/shared/ui/badge"
 import { Button } from "@/shared/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/shared/ui/card"
+
+import { useRepositoryDetails } from "@/entities/repository/api"
 
 import { ErrorState, LoadingState } from "./"
 

@@ -1,4 +1,4 @@
-interface SearchHeaderProps {
+type SearchHeaderProps = {
   query: string
   totalCount?: number
 }
