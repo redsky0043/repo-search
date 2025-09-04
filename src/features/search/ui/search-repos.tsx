@@ -2,7 +2,7 @@
 
 import { useMemo, useState } from "react"
 
-import { useSearchRepositories } from "@/shared/api/github"
+import { useSearchRepositories } from "@/entities/repository/api"
 import { useDebounce } from "@/shared/hooks"
 import { Button } from "@/shared/ui/button"
 
