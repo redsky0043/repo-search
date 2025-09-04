@@ -3,14 +3,14 @@ import { notFound } from "next/navigation"
 import { RepositoryDetails } from "@/widgets/repository-details/ui"
 
 interface RepositoryPageProps {
-  params: {
+  params: Promise<{
     owner: string
     repo: string
-  }
+  }>
 }
 
-export default function RepositoryPage({ params }: RepositoryPageProps) {
-  const { owner, repo } = params
+export default async function RepositoryPage({ params }: RepositoryPageProps) {
+  const { owner, repo } = await params
 
   if (!owner || !repo) {
     notFound()
