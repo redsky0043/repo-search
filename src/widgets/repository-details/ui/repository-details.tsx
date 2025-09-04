@@ -1,7 +1,6 @@
 "use client"
 
 import Link from "next/link"
-
 import { Star } from "lucide-react"
 
 import { formatDate, formatStars } from "@/shared/lib"

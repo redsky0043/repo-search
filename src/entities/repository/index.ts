@@ -1,4 +1,4 @@
-export { api } from "./api"
+export * from "./api"
 export type {
   GetRepositoryParams,
   Repository,
