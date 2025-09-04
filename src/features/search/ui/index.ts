@@ -1,2 +1,5 @@
 export { SearchInput } from "./search-input"
 export { SearchRepos } from "./search-repos"
+export { SearchResults } from "./search-results"
+export { SearchHeader } from "./search-header"
+export { SearchEmptyState } from "./search-empty-state"
