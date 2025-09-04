@@ -1,0 +1,12 @@
+# Generated files
+src/shared/api/github/types/github-api.ts
+
+# Dependencies
+node_modules/
+.next/
+out/
+dist/
+build/
+
+# Environment files
+.env*

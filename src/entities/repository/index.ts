@@ -1,8 +1,8 @@
-export { RepositoryCard, RepositoryList } from "./ui"
 export type {
-    Repository,
-    SearchRepositoryItem,
-    SearchRepositoriesResponse,
-    SearchRepositoriesParams,
-    GetRepositoryParams,
+  GetRepositoryParams,
+  Repository,
+  SearchRepositoriesParams,
+  SearchRepositoriesResponse,
+  SearchRepositoryItem,
 } from "./model"
+export { RepositoryCard, RepositoryList } from "./ui"

@@ -2,7 +2,7 @@ import { notFound } from "next/navigation"
 
 import { RepositoryDetails } from "@/widgets/repository-details/ui"
 
-interface RepositoryPageProps {
+type RepositoryPageProps = {
   params: Promise<{
     owner: string
     repo: string
@@ -17,6 +17,9 @@ export default async function RepositoryPage({ params }: RepositoryPageProps) {
   }
 
   return (
-    <RepositoryDetails owner={owner} repo={repo} />
+    <RepositoryDetails
+      owner={owner}
+      repo={repo}
+    />
   )
 }

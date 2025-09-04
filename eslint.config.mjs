@@ -28,6 +28,7 @@ const eslintConfig = [
       "next-env.d.ts",
       "env",
       "*.config.ts",
+      "src/shared/api/github/types/github-api.ts",
     ],
   },
   {

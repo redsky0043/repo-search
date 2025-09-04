@@ -1,7 +1,8 @@
 import { useInfiniteQuery } from "@tanstack/react-query"
 
-import { githubClient } from "../client/github-client"
 import type { SearchRepositoriesResponse } from "@/entities/repository/model"
+
+import { githubClient } from "../client/github-client"
 
 type UseSearchRepositoriesParams = {
   query: string

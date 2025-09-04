@@ -1,12 +1,12 @@
 import Link from "next/link"
-
 import { Star } from "lucide-react"
 
-import type { SearchRepositoryItem } from "../model"
 import { formatStars } from "@/shared/lib"
 import { Card, CardContent, CardHeader, CardTitle } from "@/shared/ui/card"
 
-interface RepositoryCardProps {
+import type { SearchRepositoryItem } from "../model"
+
+type RepositoryCardProps = {
   repository: SearchRepositoryItem
 }
 

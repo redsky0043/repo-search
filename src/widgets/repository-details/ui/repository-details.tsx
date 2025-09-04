@@ -1,21 +1,27 @@
 "use client"
 
+import Link from "next/link"
+import { Star } from "lucide-react"
+
 import { useRepositoryDetails } from "@/shared/api/github"
 import { formatDate, formatStars } from "@/shared/lib"
 import { Badge } from "@/shared/ui/badge"
-import { Card, CardContent, CardHeader, CardTitle } from "@/shared/ui/card"
-import { Star } from "lucide-react"
-import Link from "next/link"
 import { Button } from "@/shared/ui/button"
-import { LoadingState, ErrorState } from "./"
+import { Card, CardContent, CardHeader, CardTitle } from "@/shared/ui/card"
 
-interface RepositoryDetailsProps {
+import { ErrorState, LoadingState } from "./"
+
+type RepositoryDetailsProps = {
   owner: string
   repo: string
 }
 
 export function RepositoryDetails({ owner, repo }: RepositoryDetailsProps) {
-  const { data: repository, isLoading, isError } = useRepositoryDetails({
+  const {
+    data: repository,
+    isLoading,
+    isError,
+  } = useRepositoryDetails({
     owner,
     repo,
   })
@@ -25,7 +31,12 @@ export function RepositoryDetails({ owner, repo }: RepositoryDetailsProps) {
   }
 
   if (isError || !repository) {
-    return <ErrorState owner={owner} repo={repo} />
+    return (
+      <ErrorState
+        owner={owner}
+        repo={repo}
+      />
+    )
   }
 
   const formattedStars = formatStars(repository.stargazers_count)
@@ -64,9 +75,7 @@ export function RepositoryDetails({ owner, repo }: RepositoryDetailsProps) {
 
                 <div className="flex items-center gap-2">
                   <span className="font-semibold text-muted-foreground">Language:</span>
-                  <Badge variant="outline">
-                    {repository.language || "Unknown"}
-                  </Badge>
+                  <Badge variant="outline">{repository.language || "Unknown"}</Badge>
                 </div>
 
                 <div className="flex items-center gap-2">
@@ -100,7 +109,10 @@ export function RepositoryDetails({ owner, repo }: RepositoryDetailsProps) {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <Button variant="outline" size="sm">
+                  <Button
+                    variant="outline"
+                    size="sm"
+                  >
                     Visit Homepage
                   </Button>
                 </Link>
@@ -111,7 +123,10 @@ export function RepositoryDetails({ owner, repo }: RepositoryDetailsProps) {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Button variant="outline" size="sm">
+                <Button
+                  variant="outline"
+                  size="sm"
+                >
                   View on GitHub
                 </Button>
               </Link>
@@ -122,4 +137,3 @@ export function RepositoryDetails({ owner, repo }: RepositoryDetailsProps) {
     </section>
   )
 }
-

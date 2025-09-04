@@ -1,7 +1,7 @@
 export type {
-    Repository,
-    SearchRepositoryItem,
-    SearchRepositoriesResponse,
-    SearchRepositoriesParams,
-    GetRepositoryParams,
+  GetRepositoryParams,
+  Repository,
+  SearchRepositoriesParams,
+  SearchRepositoriesResponse,
+  SearchRepositoryItem,
 } from "./types"

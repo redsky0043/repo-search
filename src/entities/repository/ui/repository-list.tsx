@@ -4,7 +4,7 @@ import type { SearchRepositoryItem } from "../model"
 
 import { RepositoryCard } from "./repository-card"
 
-interface RepositoryListProps {
+type RepositoryListProps = {
   repositories: SearchRepositoryItem[]
 }
 

@@ -65,24 +65,29 @@ src/
 ## 🛠️ Tech Stack
 
 ### Core
+
 - **Next.js 15** - React framework with App Router
 - **TypeScript** - Type safety and better DX
 - **React 19** - Latest React features
 
 ### UI & Styling
+
 - **Tailwind CSS** - Utility-first CSS framework
 - **shadcn/ui** - High-quality component library
 - **Lucide React** - Beautiful icons
 
 ### State Management
+
 - **TanStack Query** - Server state management
 
 ### API & Types
+
 - **GitHub REST API** - Repository data source
 - **openapi-typescript** - Auto-generated TypeScript types
 - **Zod** - Schema validation
 
 ### Development Tools
+
 - **ESLint** - Code linting with FSD rules
 - **Prettier** - Code formatting
 - **pnpm** - Fast package manager
@@ -90,28 +95,33 @@ src/
 ## 🚀 Getting Started
 
 ### Prerequisites
-- Node.js 18+ 
+
+- Node.js 18+
 - pnpm (recommended) or npm
 
 ### Installation
 
 1. Clone the repository
+
 ```bash
 git clone <repository-url>
 cd repo-search
 ```
 
 2. Install dependencies
+
 ```bash
 pnpm install
 ```
 
 3. Generate API types
+
 ```bash
 pnpm generate:types
 ```
 
 4. Start development server
+
 ```bash
 pnpm dev
 ```
@@ -133,33 +143,39 @@ pnpm generate:types # Generate API types from OpenAPI
 ## 🎨 Design System
 
 ### Components
+
 - Built with **shadcn/ui** for consistency
 - Custom components follow FSD principles
 - Responsive design with Tailwind CSS
 
 ### Theming
+
 - Dark/Light mode support
 - CSS variables for theming
 - Consistent color palette
 
 ### Icons
+
 - **Lucide React** for consistent iconography
 - Optimized for performance
 
 ## 🔧 Configuration
 
 ### ESLint
+
 - Flat config format
 - FSD-specific import sorting
 - TypeScript and React rules
 - Auto-fix capabilities
 
 ### Prettier
+
 - No semicolons
 - Import sorting with `@trivago/prettier-plugin-sort-imports`
 - Consistent code formatting
 
 ### TypeScript
+
 - Strict mode enabled
 - Path mapping for clean imports
 - Generated types from OpenAPI
@@ -167,18 +183,21 @@ pnpm generate:types # Generate API types from OpenAPI
 ## 📱 Features in Detail
 
 ### Search Functionality
+
 - **Debounced search** - 500ms delay to prevent excessive API calls
 - **Minimum 3 characters** - Reduces unnecessary requests
 - **Infinite scroll** - Load 30 repositories per page
 - **Real-time results** - Instant feedback as you type
 
 ### Repository Details
+
 - **Comprehensive information** - Stars, forks, language, creation date
 - **External links** - GitHub and homepage links
 - **Responsive layout** - Works on all screen sizes
 - **Loading states** - Skeleton UI for better UX
 
 ### Performance
+
 - **Server Components** - Optimal rendering performance
 - **Client Components** - Only when interactivity is needed
 - **React Query caching** - Efficient data management

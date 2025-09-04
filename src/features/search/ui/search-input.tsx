@@ -4,7 +4,7 @@ import { Search } from "lucide-react"
 
 import { Input } from "@/shared/ui/input"
 
-interface SearchInputProps {
+type SearchInputProps = {
   value: string
   onChange: (query: string) => void
 }

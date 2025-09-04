@@ -1,7 +1,8 @@
 import { useQuery } from "@tanstack/react-query"
 
-import { githubClient } from "../client/github-client"
 import type { Repository } from "@/entities/repository/model"
+
+import { githubClient } from "../client/github-client"
 
 type UseRepositoryDetailsParams = {
   owner: string
