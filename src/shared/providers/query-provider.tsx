@@ -1,7 +1,8 @@
 "use client"
 
 import type { PropsWithChildren } from "react"
-import { isServer, QueryClient, QueryClientProvider } from "@tanstack/react-query"
+
+import { QueryClient, QueryClientProvider, isServer } from "@tanstack/react-query"
 
 import { ReactQueryDevtoolsProvider } from "./react-query-devtools"
 
